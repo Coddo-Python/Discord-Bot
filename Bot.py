@@ -24,4 +24,4 @@ async def on_message(message):
         await channel.send('@Moderator')
 
 
-client.run('NzEwODUzNTU4ODI4MDA3NDQ3.Xr6gAA.2Aa5ciSSSkuzexPvY3b1fOAJ1Mc')
+client.run('Enter Token')
