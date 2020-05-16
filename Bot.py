@@ -11,7 +11,6 @@ print("Bot Started...")
 print("Init Started...")
 StopCode = random.randint(0,9999)
 StopCode = str(StopCode)
-number = 0
 print(f"StopCode = {StopCode}")
 
 @client.event
@@ -26,4 +25,4 @@ async def on_message(message):
         await channel.send(message)
 
 
-client.run('Token')
+client.run('NzEwODUzNTU4ODI4MDA3NDQ3.Xr7sDg.G79Aw7ZjZkbSx67xbycfo7p02Vs')
