@@ -11,17 +11,19 @@ print("Bot Started...")
 print("Init Started...")
 StopCode = random.randint(0,9999)
 StopCode = str(StopCode)
-number = number(0)
+number = 0
 print(f"StopCode = {StopCode}")
 
 @client.event
 async def on_message(message):
-    if "/support" not in message.content or "/Support" not in message.content:
+    if "/support" in message.content.lower():
         print("/support Activated")
-        number = number + 1
-        channel = await message.guild.create_text_channel(f"Support {number}")
-        channel = discord.utils.get(message.guild.channels, name = f"Support {number}", type = "ChannelType.text")
-        await channel.send('@Moderator')
+        channel = client.get_channel(710934053901303828)
+        role = discord.utils.get(message.guild.roles, id = 683627319713071104)
+        msg = role.mention + "Support Activated"
+        await channel.send(msg)
+        await channel.send("Triggered by following message:")
+        await channel.send(message)
 
 
-client.run('Enter Token')
+client.run('Token')
