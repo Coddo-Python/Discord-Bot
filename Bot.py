@@ -85,7 +85,7 @@ async def purgelimit(ctx, arg = 0):
         await ctx.send(f"The Purge Limit is {purge_limit}")
     else:
         if arg <= 10000:
-            purgelimit = arg
+            purge_limit = arg
             await ctx.send(f"Purge Limit set to {arg}")
         else:
             await ctx.send("Purgle Limit Exceeded 10,000. Try Again")
