@@ -12,6 +12,7 @@ print("Bot Started...")
 print("Init Started...")
 lock = 0
 prevmessage = None
+purgelimit = 100
 
 @client.event
 async def on_message(message):
@@ -67,8 +68,20 @@ async def ping(ctx):
 
 @client.command()
 @commands.has_any_role('Moderator')
-async def purge(ctx, amount = 10):
-    await ctx.channel.purge(limit = amount)
+async def purge(ctx, amount):
+    global purgelimit
+    amount2 = int(amount)
+    if amount2 > purgelimit:
+        await ctx.send(f"Purge Limit {purgelimit} Exceeded")
+    else:
+        await ctx.channel.purge(limit = amount)
+
+@client.command()
+@commands.has_any_role('Moderator')
+async def purgelimit(ctx, arg):
+    global purgelimit
+    purgelimit = arg
+    await ctx.send(f"Purge Limit set to {arg}")
 
 
-client.run('TOKEN')
+client.run('NzEwODUzNTU4ODI4MDA3NDQ3.Xr-mvw.Q17Tp5fZsXqi2ZNsTlC8qgD6GkQ')
