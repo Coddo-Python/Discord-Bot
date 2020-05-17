@@ -84,4 +84,4 @@ async def purgelimit(ctx, arg):
     await ctx.send(f"Purge Limit set to {arg}")
 
 
-client.run('NzEwODUzNTU4ODI4MDA3NDQ3.Xr-mvw.Q17Tp5fZsXqi2ZNsTlC8qgD6GkQ')
+client.run('Token')
